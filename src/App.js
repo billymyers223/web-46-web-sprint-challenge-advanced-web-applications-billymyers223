@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
 
 import Login from "./components/Login";
 import "./styles.scss";
@@ -13,7 +13,12 @@ function App() {
           <a data-testid="logoutButton" href="#">logout</a>
         </header>
       </div>
+      <Switch>
+        <Route path = '/login' component ={Login}/>
+        <Route exact path="/" component={Login} />
+      </Switch>
     </Router>
+
   );
 }
 
