@@ -9,7 +9,6 @@ function App() {
   const logOut = () =>{
     axiosWithAuth().post('api/logout')
       .then(res =>{
-        console.log(res)
         localStorage.removeItem('token')
         window.location.href='login';
       }).catch(err => console.error(err))
